@@ -1,0 +1,33 @@
+plugins {
+	id 'org.springframework.boot' version '2.3.2.RELEASE'
+	// For importing BOM files
+	id "io.spring.dependency-management" version "1.0.11.RELEASE"
+}
+
+
+apply plugin: 'java'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web:2.3.8.RELEASE'
+	//implementation 'org.springframework.boot:spring-boot-starter-security:2.3.8.RELEASE'
+	//compile('org.springframework.boot:spring-boot-starter-data-jpa')
+        implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+        runtimeOnly 'com.h2database:h2'
+        testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+}
+
+task zip(type: Zip, dependsOn: jar) {
+	from {
+		fileTree(dir: "${buildDir}/libs").matching{include '**/*.jar'}
+	} {into ('lib')}
+	from {
+		fileTree(dir: "${sourceSets.main.output.resourcesDir}").matching{include 'application.properties'}
+	} {into ('conf')}
+	
+	archiveBaseName = "roentgen"
+}

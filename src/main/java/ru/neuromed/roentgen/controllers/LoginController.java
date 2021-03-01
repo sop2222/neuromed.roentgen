@@ -1,5 +1,7 @@
 package ru.neuromed.roentgen.controllers;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -13,14 +15,18 @@ import ru.neuromed.roentgen.vo.LoginDataVO;
 @RequestMapping(value = "/login")
 public class LoginController {
 	@PostMapping
-	public String login(@RequestBody LoginDataVO dataVO) {
+	ResponseEntity<String> login(@RequestBody LoginDataVO dataVO) {
 		if ("clon".equals(dataVO.getUserID()) && "password".equals(dataVO.getPassword()))
 		{
-			return "OK!";
+			return ResponseEntity.status(HttpStatus.OK)
+					.header("Access-Control-Allow-Origin", "neuromed.ml")
+			        .body("OK!");
 		}
 		else
 		{
-			return "NO!";
+			return ResponseEntity.status(HttpStatus.OK)
+					.header("Access-Control-Allow-Origin", "neuromed.ml")
+			        .body("NO-");
 		}
 	}
 	
