@@ -1,0 +1,92 @@
+<!DOCTYPE>
+<html>
+<head>
+<title></title>
+<style type="text/css">
+#popupbox{
+margin: 0; 
+margin-left: 40%; 
+margin-right: 40%;
+margin-top: 50px; 
+padding-top: 10px; 
+width: 20%; 
+height: 150px; 
+position: absolute; 
+background: linear-gradient(rgba(0,163,255,1), rgba(54,61,215,1));
+border: solid #000000 2px; 
+z-index: 9; 
+font-family: arial; 
+visibility: hidden; 
+}
+
+</style>
+<div class="topnav">
+<p><a href="javascript:login('show');"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+  <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+</svg></a></p>
+  <script language="JavaScript" type="text/javascript">
+function login(showhide){
+if(showhide == "show"){
+    document.getElementById('popupbox').style.visibility="visible";
+}else if(showhide == "hide"){
+    document.getElementById('popupbox').style.visibility="hidden"; 
+}
+}
+</script></a>
+  <a href="#news"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"/>
+  <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
+</svg></a>
+  <a href="#contact">Contact</a>
+  
+</div>
+<style>
+.topnav {
+    background-color: #6C80D6;
+    overflow: hidden;
+}
+
+
+.topnav a {
+    float: right;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+
+.topnav a.active {
+    background-color: #6C80D6;
+    color: white;
+ 
+
+} 
+</style>
+
+</head>
+<body>
+
+<div id="popupbox"> 
+<form name="login" action="" method="post">
+<center>Логин:</center>
+<center><input name="username" id="logg" size="14" /></center>
+<center>Пароль:</center>
+<center><input name="password" id="pass" type="password" size="14" /></center>
+<br />
+<center><input type="submit" name="submit" value="Войти" /></center>
+
+</div> 
+
+
+
+</body>
+</html>
